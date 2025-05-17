@@ -2,6 +2,27 @@ class Solution {
 public:
     void sortColors(vector<int>& nums) {
         
-        sort(nums.begin() , nums.end());
+       int a = 0  , b = 0 , c = 0;
+
+       for(auto i : nums){
+           if(i == 0)a++;
+           else if(i == 1)b++;
+           else c++;
+       }
+
+
+       int k = 0;
+
+       while(a--){
+        nums[k++] = 0;
+       }
+
+       while(b--){
+        nums[k++] = 1;
+       }
+
+       while(c--){
+        nums[k++] = 2;
+       }
     }
 };
